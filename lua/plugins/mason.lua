@@ -3,7 +3,7 @@ return {
 		"williamboman/mason.nvim",
 		config = function()
 			require("mason").setup({
-				ensure_installed = { "lua_ls", "isort", "black", "ols", "yamlls", "prettier", "pyright" },
+				ensure_installed = { "lua_ls", "ols", "yamlls", "prettier", "pyright" },
 			})
 		end,
 	},

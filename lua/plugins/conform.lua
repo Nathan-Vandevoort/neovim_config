@@ -4,22 +4,18 @@ return {
 		opts = {},
 		config = function()
 			require("conform").setup({
+				log_level = vim.log.levels.DEBUG,
 				formatters_by_ft = {
 					lua = { "stylua" },
-					python = { "black" },
+					python = { "isort", "black" },
 					json = { "prettier" },
 				},
 				format_on_save = {
-					timeout_ms = 300,
-					lsp_format = "fallback",
+					timeout_ms = 1800,
+					lsp_fallback = true,
+					async = false,
 				},
 				formatters = {
-					isort = {
-						command = "isort",
-						args = {
-							"-",
-						},
-					},
 					stylua = {
 						prepend_args = { "--column-width", "120" },
 					},
